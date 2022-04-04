@@ -1,3 +1,28 @@
-h1{
-    color: green;
+/* Navbar Styling  */
+.navbar{
+    background-color: #ffffff;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 50px;
+    box-sizing: border-box;
+    text-decoration: none;
+  /* animation magic */
+    transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+}
+#runningheader{
+    position: relative;
+    color: #000000;
+    font-family: Lobster;
+}
+.input{
+    background-color: rgb(235, 235, 235);
 }
