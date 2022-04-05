@@ -1,4 +1,4 @@
-#!/home/kk/Documents/moringa_django/DoubleTap/venv/bin/python3
+#!/home/kk/Documents/moringa_django/DoubleTap/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,5 +1,6 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
+from django.utils import timezone
 
 
 # Create your models here.
@@ -24,7 +25,8 @@ class Image(models.Model):
     image_caption = models.CharField(max_length=30)
     profile = models.ForeignKey(Profile, on_delete=models.DO_NOTHING)
     likes = models.BooleanField()
-    comments = models.CharField(max_length=30) 
+    comments = models.CharField(max_length=30)
+    date_created = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.image_name

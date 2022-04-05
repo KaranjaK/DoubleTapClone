@@ -24,7 +24,7 @@ class ImageTest(TestCase):
         self.profile = Profile(name='Msee')
         self.profile.save_profile()
         
-        self.my_image = Image(id=1, image='image/photo.jpg', image_name='My Prof', image_caption='That is more like it', profile=self.profile, likes=True, comments='Kazi safi')
+        self.my_image = Image(id=1, image='image/photo.jpg', image_name='My Prof', image_caption='That is more like it', profile=self.profile, likes=True, comments='Kazi safi', date_created='2022-04-05')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.my_image, Image))
