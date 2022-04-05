@@ -84,8 +84,12 @@ WSGI_APPLICATION = 'doubletap.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'doubletap',
+        'USER': 'kk',
+        'PASSWORD': 'admin101'
+
+
     }
 }
 
