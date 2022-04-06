@@ -1,5 +1,5 @@
 from django.urls import path
-from user.views import ProfileView,ProfileEditView,AllProfilesView
+from .views import ProfileView,ProfileEditView,AllProfilesView
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [

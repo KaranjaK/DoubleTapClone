@@ -7,9 +7,9 @@ class UserEditForm(forms.ModelForm):
     class Meta:
         model = User
         fields = (
-            'picture','full_name','username','email',
+            'picture','names','username','email',
             'bio','website','phone_number','gender',
-            'is_private_account',
+            'is_private_account'
         )
 
         # change the label name manually 
