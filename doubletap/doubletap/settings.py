@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'tap',
+    'auth',
+    'chat',
     'bootstrap4',
     'cloudinary',
 ]
