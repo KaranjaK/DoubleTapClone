@@ -16,8 +16,6 @@ from django.contrib.auth.views import (
       )
 # Create your views here.
 
-# def home(request):
-#     return HttpResponse("home")
 User=get_user_model()
 #class based views
 class SignUpView(View):
@@ -65,7 +63,6 @@ class SignInView(View):
         messages.success(request,f'welcome back {user.username}')
         return redirect('home_feed_view')
 
-
 class SignOutView(View):
     def post(self, request,*args, **kwargs):
         logout(request)
@@ -79,31 +76,16 @@ class PRView(PasswordResetView):
 class PRDone(PasswordResetDoneView):
     template_name = 'authentication/password_reset_done.html'
 
-
 class PRConfirm(PasswordResetConfirmView):
     template_name = 'authentication/password_reset_confirm.html'
 
 class PRComplete(PasswordResetCompleteView):
     template_name = 'authentication/password_reset_complete.html'
 
-# since we used directly in urls 
-# that's why here both below views not working
-
 class PWDChangeView(PasswordChangeView):
     template_name = 'authentication/password_change.html'
-    success_url =reverse_lazy('password_change_done_view')  # dynamically get urls
+    success_url =reverse_lazy('password_change_done_view')
 
 
 class PWDChangeDoneView(PasswordChangeDoneView):
     template_name = 'authentication/password_change_done.html'
-
-"""
-function based views
-
-def signup_view(request):
-    if request.method=='POST':
-        #code
-    if request.method=='GET':
-        #code
-
-"""
