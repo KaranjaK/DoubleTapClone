@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.views.generic import View
 from django.contrib import messages
 from django.http import HttpResponse
-from auth.forms import UserForm
+from authen.forms import UserForm
 from django.urls import reverse_lazy
 from django.contrib.auth import authenticate,login,logout,get_user_model
 # from user.models import User

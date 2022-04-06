@@ -42,9 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'tap',
-    'auth',
-    'chat',
+    'tap.apps.TapConfig',
+    'authen.apps.AuthenConfig',
+    'chat.apps.ChatConfig',
     'bootstrap4',
     'cloudinary',
 ]
