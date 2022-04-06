@@ -1,18 +1,14 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from chat.utils import auto_save_current_user
+from tap.models import Person
 
 User = get_user_model()
 
 class Post(models.Model):
-    # id = models.AutoField(primary_key=True)
     text = models.CharField( max_length=250,blank=True,null=True)
     image = models.ImageField(upload_to = 'post_images')
-    user = models. ForeignKey(User, on_delete=models.PROTECT,editable=False) 
-    # since in this we only one time access user model that's why 
-    # django by default set realative name as ModelName_set
-    #django internally id to name -> user_id
-    # editable=False --> it hide this field in form table of model
+    user = models. ForeignKey(Person, on_delete=models.PROTECT,editable=False) 
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
@@ -41,7 +37,7 @@ class Post(models.Model):
 class Comment(models.Model):
     text = models.CharField( max_length=150)
     post = models.ForeignKey(Post,on_delete=models.CASCADE)
-    user = models. ForeignKey(User, on_delete=models.CASCADE,editable=False)
+    user = models. ForeignKey(Person, on_delete=models.CASCADE,editable=False)
     commented_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     def __str__(self):
@@ -52,9 +48,8 @@ class Comment(models.Model):
         super(Comment, self).save(*args, **kwargs)
 
 class Like(models.Model):
-    post = models.ForeignKey(Post,on_delete=models.CASCADE) # like_set is default relative name set by django default
-    user = models. ForeignKey(User, on_delete=models.CASCADE,editable=False)
-    # is_like = models.BooleanField(default=True)
+    post = models.ForeignKey(Post,on_delete=models.CASCADE) 
+    user = models. ForeignKey(Person, on_delete=models.CASCADE,editable=False)
     liked_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     def __str__(self):
@@ -65,10 +60,8 @@ class Like(models.Model):
         super(Like, self).save(*args, **kwargs)
 
 class Follow(models.Model):
-    # since we can used User table in 2 fields hence got Reverse accessor warning
-    # to fix this assign diff related_name
-    user = models.ForeignKey(User,related_name='follow_follower', on_delete=models.CASCADE,editable=False)
-    followed = models.ForeignKey(User,related_name='follow_followed', on_delete=models.CASCADE)
+    user = models.ForeignKey(Person,related_name='follow_follower', on_delete=models.CASCADE,editable=False)
+    followed = models.ForeignKey(Person,related_name='follow_followed', on_delete=models.CASCADE)
     # is_follow = models.BooleanField(default=True)
     followed_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -81,7 +74,7 @@ class Follow(models.Model):
 
 class SavedPost(models.Model):
     post = models.ForeignKey(Post,on_delete=models.CASCADE)
-    user = models.ForeignKey(User,on_delete=models.CASCADE,editable=False)
+    user = models.ForeignKey(Person,on_delete=models.CASCADE,editable=False)
     saved_on = models.DateTimeField(auto_now_add=True)
    
     def __str__(self):

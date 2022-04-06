@@ -27,7 +27,6 @@ from django.contrib.auth.views import (
 # we convert it using as_view() method
 
 urlpatterns = [
-    # path("",home,name="home_view"),
     path('',SignInView.as_view(),name='signin_view'),
     path('signup/',SignUpView.as_view(),name='signup_view'),
     path('signout/',SignOutView.as_view(),name='signout_view'),
