@@ -94,6 +94,8 @@ cloudinary.config(
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+AUTH_USER_MODEL = 'tap.Person'
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

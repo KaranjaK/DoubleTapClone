@@ -1,4 +1,3 @@
-from tkinter.font import names
 from django.db import models
 from django.contrib.auth.models import AbstractUser 
 from tap.managers import CustomUserManager
@@ -9,7 +8,7 @@ GENDER_CHOICES = [
     ('None','Prefer not to say.'),
 ]
 # Create your models here.
-class User(AbstractUser):
+class Person(AbstractUser):
     picture=models.ImageField(upload_to='profile_pictures',null=True,blank=True)
     names=models.CharField(max_length=50,help_text="Help people discover your account by using the name you're known by : either your full name, nickname, or business name.")
     email=models.EmailField(unique=True)

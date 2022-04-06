@@ -5,7 +5,7 @@ from django.shortcuts import HttpResponse
 from .forms import UserEditForm
 from django.contrib import messages
 from django.db.models import Q
-from .models import Follow
+from chat.models import Follow
 
 User = get_user_model()
 # Create your views here.

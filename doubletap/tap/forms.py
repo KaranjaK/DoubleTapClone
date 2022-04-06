@@ -1,11 +1,13 @@
 from django import forms
 from django.contrib.auth import get_user_model
 
+from .models import Person
+
 User = get_user_model()
 
 class UserEditForm(forms.ModelForm):
     class Meta:
-        model = User
+        model = Person
         fields = (
             'picture','names','username','email',
             'bio','website','phone_number','gender',

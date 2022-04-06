@@ -2,19 +2,19 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth import get_user_model
 from authen.forms import UserForm, CustomUserChangeForm
+from .models import Person
 # Register your models here.
-User = get_user_model()
-# admin.site.register(User)
+Person = get_user_model()
 
 
 # ModelAdmin
 class CustomUserAdmin(UserAdmin):
     add_form = UserForm
     form = CustomUserChangeForm
-    model = User
+    model = Person
 
     add_fieldsets = (
-        ('Personal Details', {"fields": ('email','full_name','username','picture','password1','password2')}),
+        ('Personal Details', {"fields": ('email','names','username','picture','password1','password2')}),
         ('Permissions',{"fields":('is_staff','is_active')}),
         ('Optional',{"fields":('bio','website')})
     )
@@ -23,11 +23,11 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
         ('Personal Details', {
             "fields": ('email',
-            'full_name','username','picture')}),
+            'names','username','picture')}),
         ('Permissions',{
             "fields":('is_staff','is_active')}),
         ('Optional',{"fields":('bio','website')})
     )
     
 
-admin.site.register(User, CustomUserAdmin)
+# admin.site.register(User, CustomUserAdmin)
