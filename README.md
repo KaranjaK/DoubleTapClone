@@ -7,7 +7,7 @@
 #### *Kelvin Karanja*
 
 ## Screenshot
-<img src='https://github.com/KaranjaK/Personal-Gallery/blob/master/static/screenshot.png'>
+<img src=''>
 
 ## User Stories
 The user would like to.... :
@@ -31,8 +31,8 @@ The user would like to.... :
 
 #### Cloning
 * Open Terminal {Ctrl+Alt+T}
-* Git clone:
-* cd PDoubleTapClone
+* Git clone: https://github.com/KaranjaK/DoubleTapClone
+* cd DoubleTapClone
 * code . or atom . based on the text editor you have.
 
 #### Running the Application
