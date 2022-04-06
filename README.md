@@ -31,7 +31,7 @@ The user would like to.... :
 
 #### Cloning
 * Open Terminal {Ctrl+Alt+T}
-* Git clone: https://github.com/KaranjaK/DoubleTapClone
+* Git clone:
 * cd PDoubleTapClone
 * code . or atom . based on the text editor you have.
 
